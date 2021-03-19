@@ -1,0 +1,55 @@
+{% load static %}
+        <!-- Navbar Start -->
+        <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <div class="slicknav_menu">
+                        <liner aria-haspopup="true" tabindex="0" class="slicknav_btn slicknav_collapsed" style="outline: none;">
+                            <span class="slicknav_menutxt"></span>
+                            <span class="slicknav_icon slicknav_no-text">
+                                <span class="slicknav_icon-bar"></span>
+                                <span class="slicknav_icon-bar"></span>
+                                <span class="slicknav_icon-bar"></span>
+                            </span>
+                        </liner>
+                        <ul class="slicknav_nav slicknav_hidden" aria-hidden="true" role="menu" style="display: none;">
+                            <li>
+                                <a href="{% url 'categories_list' %}" role="menuitem" tabindex="-1">Категории</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                      <span class="lni-menu"></span>
+                      <span class="lni-menu"></span>
+                      <span class="lni-menu"></span>
+                    </button>
+                    <a href="{% url 'home' %}" class="navbar-brand"><img src="{% static 'img/logo.png' %}" alt=""></a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-navbar">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                        <a class="nav-link" href="{% url 'categories_list' %}">
+                          Категории
+                        </a>
+                        </li>
+                    </ul>
+                    <ul class="sign-in">
+                    </ul>
+                    <a class="tg-btn" href="#">
+                        <i class="lni-cart"></i>Корзина
+                    </a>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Start -->
+            <ul class="mobile-menu">
+              <li>
+                <a class="active" href="{% url 'categories_list' %}">Категории</a>
+              </li>
+            </ul>
+            <!-- Mobile Menu End -->
+
+        </nav>
+        <!-- Navbar End -->

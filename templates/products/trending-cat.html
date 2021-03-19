@@ -1,0 +1,29 @@
+    <!-- Trending Categories Section Start -->
+    <section class="trending-cat section-padding">
+      <div class="container">
+        <h1 class="section-title">Категории товаров</h1>
+        <div class="row">
+          {% for category in categories %}
+          <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+            <a href="#">
+              <div class="box">
+                <div class="icon">
+                  {% if category.image %}
+                    <img class="img-fluid" src="{{ category.image.url }}" alt="">
+                  {% else %}
+                    {% load static %}
+                    <img class="img-fluid" src="{% static 'img/none.jpg' %}" alt="">
+                  {% endif %}
+                </div>
+                <h4>{{ category.item_name }}</h4>
+                {% if category.get_products.count > 0 %}
+                    <strong>({{ category.get_products.count }})</strong>
+                {% endif %}
+              </div>
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    <!-- Trending Categories Section End -->
