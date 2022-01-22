@@ -24,7 +24,7 @@ SECRET_KEY = 'y9^!+#$f-l^ufe!va)y_8wu*k=3+3)s*cyr%0k$z(4vgv81r#g'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 # Application definition
 
@@ -74,12 +74,25 @@ WSGI_APPLICATION = 'td.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE':   'django.db.backends.mysql',
+        'NAME':     'td_db',
+        'USER':     'root',
+        'PASSWORD': '55555',
+        'HOST':     '127.0.0.1',
+        'PORT':     '',
     }
 }
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -115,7 +128,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')  # пустая папка, сюда будет собирать статику collectstatic
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# пустая папка, сюда будет собирать статику collectstatic
 
 STATIC_URL = '/static/'  # URL для шаблонов
 
